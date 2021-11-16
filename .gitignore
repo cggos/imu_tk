@@ -1,3 +1,4 @@
 build/
-bin/
 lib/
+bin/test_imu_calib
+bin/test_integration

@@ -24,15 +24,19 @@ int main(int argc, char** argv)
   
   
   CalibratedTriad init_acc_calib, init_gyro_calib;
-  init_acc_calib.setBias( Vector3d(32768, 32768, 32768) );
-  init_gyro_calib.setScale( Vector3d(1.0/6258.0, 1.0/6258.0, 1.0/6258.0) );
   
+  // default
+  // init_acc_calib.setBias( Vector3d(32768, 32768, 32768) );
+  // init_gyro_calib.setScale( Vector3d(1.0/6258.0, 1.0/6258.0, 1.0/6258.0) );
+  init_acc_calib.setBias( Vector3d(0,0,0) );
+  init_gyro_calib.setScale( Vector3d(1.0, 1.0, 1.0) );
+
   MultiPosCalibration mp_calib;
     
   mp_calib.setInitStaticIntervalDuration(50.0);
   mp_calib.setInitAccCalibration( init_acc_calib );
   mp_calib.setInitGyroCalibration( init_gyro_calib );  
-  mp_calib.setGravityMagnitude(9.81744);
+  mp_calib.setGravityMagnitude(9.8016); // 9.81744
   mp_calib.enableVerboseOutput(true);
   mp_calib.enableAccUseMeans(false);
   //mp_calib.setGyroDataPeriod(0.01);

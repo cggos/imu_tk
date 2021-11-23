@@ -81,6 +81,18 @@ Test the library with the **test_imu_calib** app (binary in /bin, source code in
 
 ```
 
+## Correction
+
+$$
+a = T_a \cdot K_a \cdot (a_m - b_a)
+$$
+
+$$
+w = T_g \cdot K_g \cdot (w_m - b_g)
+$$
+
+* ref: pg_imeko2014
+
 ## Contact information ##
 
 Alberto Pretto [pretto@dis.uniroma1.it](mailto:pretto@dis.uniroma1.it)
